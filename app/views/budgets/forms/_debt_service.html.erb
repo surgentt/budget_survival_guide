@@ -1,15 +1,16 @@
 <h2>Do you have any debt to pay off?</h2>
 
-<%= form_for(@budget) do |f| %>
+<div class="row-fluid">
+  <%= form_for(@budget) do |f| %>
 
-  <div class="field">
-    <%= f.number_field :debt_service %>
-  </div>
+    <div class="form-group col-md-3">
+      <%= f.number_field :debt_service, class: "form-control", autofocus: true %>
+    </div>
 
-  <%= hidden_field_tag(:section, "debt_service") %>
+    <div class="row">
+      <%= f.submit "Next", class: "btn btn-default" %>
+    </div>
 
-  <div>
-    <%= f.submit "Next", class: "btn btn-default" %>
-  </div>
-
-<% end %>
+    <%= hidden_field_tag(:section, "debt_service") %>
+  <% end %>
+</div>

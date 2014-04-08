@@ -1,15 +1,16 @@
 <h2>How much do you plan on food a month?</h2>
 
-<%= form_for(@budget) do |f| %>
+<div class="row-fluid">
+  <%= form_for(@budget) do |f| %>
 
-  <div class="field">
-    <%= f.number_field :food %>
-  </div>
+    <div class="form-group col-md-3">
+      <%= f.number_field :food, class: "form-control", autofocus: true %>
+    </div>
 
-  <%= hidden_field_tag(:section, "food") %>
+    <div class="row">
+      <%= f.submit "Next", class: "btn btn-default" %>
+    </div>
 
-  <div>
-    <%= f.submit "Next", class: "btn btn-default" %>
-  </div>
-
-<% end %>
+    <%= hidden_field_tag(:section, "food") %>
+  <% end %>
+</div>

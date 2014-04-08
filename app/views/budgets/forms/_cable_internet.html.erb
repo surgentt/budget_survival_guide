@@ -1,14 +1,16 @@
 <h2> Do you want cable and internet? </h2>
-<%= form_for(@budget) do |f| %>
 
-  <div class="field">
-    <%= f.number_field :cable_internet %>
-  </div>
+<div class="row-fluid">
+  <%= form_for(@budget) do |f| %>
 
-  <%= hidden_field_tag(:section, "cable_internet") %>
+    <div class="form-group col-md-3">
+      <%= f.number_field :cable_internet, class: "form-control", autofocus: true %>
+    </div>
 
-  <div>
-    <%= f.submit "Next", class: "btn btn-default" %>
-  </div>
+    <div class="row">
+      <%= f.submit "Next", class: "btn btn-default" %>
+    </div>
 
-<% end %>
+    <%= hidden_field_tag(:section, "cable_internet") %>
+  <% end %>
+</div>
