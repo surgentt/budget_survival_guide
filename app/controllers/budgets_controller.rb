@@ -5,23 +5,13 @@ class BudgetsController < ApplicationController
     @budget = Budget.new
   end
 
-
-
   def create
-    @budget = Budget.new(budget_params)
-
-    respond_to do |format|
-      if @budget.save
-        format.html { redirect_to housing_path(@budget) }
-        # format.json { render action: 'show'}
-      else
-        format.html { render action: 'new' }
-        # format.json { render json: @budget.errors, status: :unprocessable_entity }
-      end
-    end
+    @budget = Budget.create
+    redirect_to edit_budget_path(@budget)
   end
 
-  def housing
+  # GET /budgets/1/edit
+  def edit
     @budget = Budget.find(params[:id])
   end
 
@@ -38,12 +28,6 @@ class BudgetsController < ApplicationController
     end
   end
 
-  def cable_internet
-    @budget = Budget.find(params[:id])
-  end
-
-
-  ## Scaffolded Code
 
   # GET /budgets
   # GET /budgets.json
@@ -57,20 +41,6 @@ class BudgetsController < ApplicationController
     @budget = Budget.find(params[:id])
   end
 
-  # GET /budgets/1/edit
-  def edit
-  end
-
-  # POST /budgets
-  # POST /budgets.json
-
-
-  # PATCH/PUT /budgets/1
-  # PATCH/PUT /budgets/1.json
-
-
-  # DELETE /budgets/1
-  # DELETE /budgets/1.json
   def destroy
     @budget.destroy
     respond_to do |format|
@@ -89,4 +59,22 @@ class BudgetsController < ApplicationController
     def budget_params
       params.require(:budget).permit(:income, :healthcare, :state, :income_after_taxes, :housing, :cable_internet, :utilities, :laundry, :commute, :food, :debt_service, :investing, :emergency, :disposable_income)
     end
+
+    def profile_sections
+      @profile_sections ||= ProfilesController::Sections
+    end
+    helper_method :profile_sections
+
+    def current_profile_section
+      @current_profile_section ||= (params[:section])
+    end
+    helper_method :current_profile_section
+
+    def next_profile_section
+      @next_profile_section ||= (
+        profile_sections[profile_sections.index(current_profile_section)+1] ||
+        profile_sections.first
+      )
+    end
+    helper_method :next_profile_section
 end

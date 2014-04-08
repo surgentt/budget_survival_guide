@@ -1,0 +1,62 @@
+<%= form_for(@budget) do |f| %>
+
+  <div class="field">
+    <%= f.label :income %><br>
+    <%= f.number_field :income %>
+  </div>
+  <div class="field">
+    <%= f.label :healthcare %><br>
+    <%= f.number_field :healthcare %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :income_after_taxes %><br>
+    <%= f.number_field :income_after_taxes %>
+  </div>
+  <div class="field">
+    <%= f.label :housing %><br>
+    <%= f.number_field :housing %>
+  </div>
+  <div class="field">
+    <%= f.label :cable_internet %><br>
+    <%= f.number_field :cable_internet %>
+  </div>
+  <div class="field">
+    <%= f.label :utilities %><br>
+    <%= f.number_field :utilities %>
+  </div>
+  <div class="field">
+    <%= f.label :laundry %><br>
+    <%= f.number_field :laundry %>
+  </div>
+  <div class="field">
+    <%= f.label :commute %><br>
+    <%= f.number_field :commute %>
+  </div>
+  <div class="field">
+    <%= f.label :food %><br>
+    <%= f.number_field :food %>
+  </div>
+  <div class="field">
+    <%= f.label :debt_service %><br>
+    <%= f.number_field :debt_service %>
+  </div>
+  <div class="field">
+    <%= f.label :investing %><br>
+    <%= f.number_field :investing %>
+  </div>
+  <div class="field">
+    <%= f.label :emergency %><br>
+    <%= f.number_field :emergency %>
+  </div>
+  <div class="field">
+    <%= f.label :disposable_income %><br>
+    <%= f.number_field :disposable_income %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
