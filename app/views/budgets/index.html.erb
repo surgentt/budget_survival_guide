@@ -1,0 +1,51 @@
+<h1>Listing budgets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Income</th>
+      <th>Healthcare</th>
+      <th>State</th>
+      <th>Income after taxes</th>
+      <th>Housing</th>
+      <th>Cable internet</th>
+      <th>Utilities</th>
+      <th>Laundry</th>
+      <th>Commute</th>
+      <th>Food</th>
+      <th>Debt service</th>
+      <th>Investing</th>
+      <th>Emergency</th>
+      <th>Disposable income</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @budgets.each do |budget| %>
+      <tr>
+        <td><%= budget.income %></td>
+        <td><%= budget.healthcare %></td>
+        <td><%= budget.state %></td>
+        <td><%= budget.income_after_taxes %></td>
+        <td><%= budget.housing %></td>
+        <td><%= budget.cable_internet %></td>
+        <td><%= budget.utilities %></td>
+        <td><%= budget.laundry %></td>
+        <td><%= budget.commute %></td>
+        <td><%= budget.food %></td>
+        <td><%= budget.debt_service %></td>
+        <td><%= budget.investing %></td>
+        <td><%= budget.emergency %></td>
+        <td><%= budget.disposable_income %></td>
+        <td><%= link_to 'Show', budget %></td>
+        <td><%= link_to 'Edit', edit_budget_path(budget) %></td>
+        <td><%= link_to 'Destroy', budget, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Budget', new_budget_path %>
