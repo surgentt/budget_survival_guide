@@ -2,12 +2,11 @@ class BudgetsController < ApplicationController
   Sections = ["income", "housing", "cable_internet", "utilities", "laundry", "commute", "food", "debt_service", "investing", "emergency"]
 
   def home
-
   end
 
   def create
     @budget = Budget.create
-    redirect_to budget_edit1_path(@budget)
+    redirect_to budget_edit_path(@budget)
   end
 
   def edit
@@ -15,10 +14,10 @@ class BudgetsController < ApplicationController
   end
 
   def update
+    #binding.pry
     @budget = Budget.find(params[:id])
     if @budget.update(budget_params)
-      #binding.pry
-      redirect_to edit_budget_path(@budget) 
+      redirect_to budget_edit_path(@budget, :section => next_budget_section)
     else
       render action: 'edit' 
     end
@@ -54,7 +53,7 @@ class BudgetsController < ApplicationController
     def current_budget_section
       @current_budget_section ||= (params[:section])
     end
-    helper_method :current_profile_section
+    helper_method :current_budget_section
 
     def next_budget_section
       @next_budget_section ||= (
