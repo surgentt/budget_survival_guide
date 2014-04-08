@@ -1,0 +1,15 @@
+<h2> What do you spend on your Cable and Internet? </h2>
+<%= form_for(@budget) do |f| %>
+
+  <div class="field">
+    <%= f.label :cable_internet %>
+    <%= f.number_field :cable_internet %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
+
+<%= render 'show' %>

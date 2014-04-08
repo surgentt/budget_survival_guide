@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   post 'budgets' => 'budgets#create'
 
   get 'budgets/:id/housing' => 'budgets#housing', :as => 'housing'
+  #patch 'budgets/:id/housing' => 'budgets#update'
+
   get 'budgets/:id/cable_internet' => 'budgets#cable_internet', :as => 'cable_internet'
+
+
+  
   get 'budgets/:id/utilities' => 'budgets#utilities', :as => 'utilities'
   get 'budgets/:id/laundry' => 'budgets#laundry', :as => 'laundry'
   get 'budgets/:id/commute' => 'budgets#commute', :as => 'commute'

@@ -1,19 +1,18 @@
 class BudgetsController < ApplicationController
-  # before_action :set_budget, only: [:edit, :update, :destroy]
+  Sections = ["income", "housing", "cable_internet", "utilities", "laundry", "commute", "food", "debt_service", "investing", "emergency"]
 
   def home
-  end
-
-  def income
     @budget = Budget.new
   end
+
+
 
   def create
     @budget = Budget.new(budget_params)
 
     respond_to do |format|
       if @budget.save
-        format.html { redirect_to housing_path(budget) }
+        format.html { redirect_to housing_path(@budget) }
         # format.json { render action: 'show'}
       else
         format.html { render action: 'new' }
@@ -30,21 +29,18 @@ class BudgetsController < ApplicationController
     @budget = Budget.find(params[:id])
     respond_to do |format|
       if @budget.update(budget_params)
-        format.html { redirect_to @budget, notice: 'Budget was successfully updated.' }
-        format.json { render action: 'show', status: :ok, location: @budget }
+        format.html { redirect_to cable_internet_path(@budget) }
+        # format.json { render action: 'show', status: :ok, location: @budget }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @budget.errors, status: :unprocessable_entity }
+        # format.json { render json: @budget.errors, status: :unprocessable_entity }
       end
     end
   end
 
-
-
-
-
-
-
+  def cable_internet
+    @budget = Budget.find(params[:id])
+  end
 
 
   ## Scaffolded Code
