@@ -1,1 +1,15 @@
-4laundry.html.erb
+<h2> What's your laundry budget? </h2>
+<%= form_for(@budget) do |f| %>
+
+  <div class="field">
+    <%= f.label :laundry %>
+    <%= f.number_field :laundry %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
+
+<%= render 'show' %>

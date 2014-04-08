@@ -1,1 +1,15 @@
-5commute.html.erb
+<h2> What do you spend on your commute? </h2>
+<%= form_for(@budget) do |f| %>
+
+  <div class="field">
+    <%= f.label :commute %>
+    <%= f.number_field :commute %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
+
+<%= render 'show' %>

@@ -1,1 +1,14 @@
-9emergency.html.erb
+<%= form_for(@budget) do |f| %>
+
+  <div class="field">
+    <%= f.label :emergency %>
+    <%= f.number_field :emergency %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
+
+<%= render 'show' %>

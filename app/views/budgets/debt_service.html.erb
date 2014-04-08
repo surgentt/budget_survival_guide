@@ -1,1 +1,14 @@
-7debt_service.html.erb
+<%= form_for(@budget) do |f| %>
+
+  <div class="field">
+    <%= f.label :debt_service %>
+    <%= f.number_field :debt_service %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
+
+<%= render 'show' %>
