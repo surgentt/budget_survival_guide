@@ -1,9 +1,22 @@
 Rails.application.routes.draw do
 
-  root'budgets#home'
+  root 'budgets#home'
 
-  resources :budgets
+  resources :budgets , :except => [:edit] do 
+    get 'edit/:section' => 'budgets#edit', :as => 'edit',
+      :defaults => {:section => BudgetsController::Sections.first}
+  end
+  
+  
 
-  get 'budgets/:id/edit/income' => 'budgets#income', :as => "income"
+  # resources :budgets do
+  #   get ':id/edit/(:section)' => 'budgets#edit', :as => 'edit',
+  #       :defaults => {:section => BudgetsController::Sections.first}
+  # end
+
+  # resources :budgets, :except => [:edit] do
+  #   get 'edit/(:section)' => 'budgets#edit', :as => 'edit',
+  #       :defaults => {:section => BudgetsController::Sections.first}
+  # end  
 
 end
