@@ -2,22 +2,22 @@ class BudgetsController < ApplicationController
   Sections = ["income", "housing", "cable_internet", "utilities", "laundry", "commute", "food", "debt_service", "investing", "emergency"]
 
   def home
-    @budget = Budget.new
   end
 
   def create
     @budget = Budget.create
-    redirect_to edit_budget_path(@budget)
+    redirect_to budget_edit_path(@budget)
   end
 
   def edit
-    @budget = Budget.find(params[:id])
+    @budget = Budget.find(params[:budget_id])
   end
 
   def update
+    #binding.pry
     @budget = Budget.find(params[:id])
     if @budget.update(budget_params)
-      redirect_to cable_internet_path(@budget) 
+      redirect_to budget_edit_path(@budget, :section => next_budget_section)
     else
       render action: 'edit' 
     end
@@ -45,21 +45,21 @@ class BudgetsController < ApplicationController
       params.require(:budget).permit(:income, :healthcare, :state, :income_after_taxes, :housing, :cable_internet, :utilities, :laundry, :commute, :food, :debt_service, :investing, :emergency, :disposable_income)
     end
 
-    def profile_sections
-      @profile_sections ||= ProfilesController::Sections
+    def budget_sections
+      @budget_sections ||= BudgetsController::Sections
     end
-    helper_method :profile_sections
+    helper_method :budget_sections
 
-    def current_profile_section
-      @current_profile_section ||= (params[:section])
+    def current_budget_section
+      @current_budget_section ||= (params[:section])
     end
-    helper_method :current_profile_section
+    helper_method :current_budget_section
 
-    def next_profile_section
-      @next_profile_section ||= (
-        profile_sections[profile_sections.index(current_profile_section)+1] ||
-        profile_sections.first
+    def next_budget_section
+      @next_budget_section ||= (
+        budget_sections[budget_sections.index(current_budget_section)+1] ||
+        budget_sections.first
       )
     end
-    helper_method :next_profile_section
+    helper_method :next_budget_section
 end
