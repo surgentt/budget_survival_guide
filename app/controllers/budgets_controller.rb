@@ -14,9 +14,9 @@ class BudgetsController < ApplicationController
   end
 
   def update
-    #binding.pry
     @budget = Budget.find(params[:id])
     if @budget.update(budget_params)
+      binding.pry
       redirect_to budget_edit_path(@budget, :section => next_budget_section)
     else
       render action: 'edit' 
