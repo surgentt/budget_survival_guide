@@ -3,14 +3,14 @@
 <%= form_for(@budget) do |f| %>
 
   <div class="field">
-    <%= f.label :food %>
-    <%= f.number_field :food %>
+    <%= f.label :investing %>
+    <%= f.number_field :investing %>
   </div>
+
+  <%= hidden_field_tag(:section, "investing") %>
 
   <div class="actions">
     <%= f.submit %>
   </div>
 
 <% end %>
-
-<%= render 'show' %>

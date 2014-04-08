@@ -5,10 +5,11 @@
     <%= f.number_field :emergency %>
   </div>
 
+  <%= hidden_field_tag(:section, "emergency") %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
 
 <% end %>
 
-<%= render 'show' %>

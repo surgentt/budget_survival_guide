@@ -1,0 +1,15 @@
+<h2> What do you spend on your Utilities? </h2>
+<%= form_for(@budget) do |f| %>
+
+  <div class="field">
+    <%= f.label :utilities %>
+    <%= f.number_field :utilities %>
+  </div>
+
+  <%= hidden_field_tag(:section, "utilities") %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

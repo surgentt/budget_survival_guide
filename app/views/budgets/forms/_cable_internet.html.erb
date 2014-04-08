@@ -6,10 +6,10 @@
     <%= f.number_field :cable_internet %>
   </div>
 
+  <%= hidden_field_tag(:section, "cable_internet") %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
 
 <% end %>
-
-<%= render 'show' %>

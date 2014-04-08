@@ -1,9 +1,13 @@
+<h2> Home much are you making next year? </h2>
+
 <%= form_for(@budget) do |f| %>
 
   <div class="field">
     <%= f.label :income %>
     <%= f.number_field :income %>
   </div>
+
+  <%= hidden_field_tag(:section, "income") %>
 
   <div class="actions">
     <%= f.submit %>

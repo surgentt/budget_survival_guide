@@ -6,10 +6,10 @@
     <%= f.number_field :commute %>
   </div>
 
+  <%= hidden_field_tag(:section, "commute") %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
 
 <% end %>
-
-<%= render 'show' %>
