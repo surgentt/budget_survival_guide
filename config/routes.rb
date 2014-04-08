@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   resources :budgets
 
+  get 'budgets/:id/edit/income' => 'budgets#income', :as => "income"
+
 end
