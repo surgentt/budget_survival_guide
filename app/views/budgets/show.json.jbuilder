@@ -1,1 +1,0 @@
-json.extract! @budget, :id, :income, :healthcare, :state, :income_after_taxes, :housing, :cable_internet, :utilities, :laundry, :commute, :food, :debt_service, :investing, :emergency, :disposable_income, :created_at, :updated_at
