@@ -1,0 +1,14 @@
+<%= form_for(@budget) do |f| %>
+
+  <div class="field">
+    <%= f.label :housing %>
+    <%= f.number_field :housing %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
+
+<%= render 'show' %>

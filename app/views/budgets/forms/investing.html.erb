@@ -1,0 +1,16 @@
+<h2> How much do you plan on saving a month? </h2>
+
+<%= form_for(@budget) do |f| %>
+
+  <div class="field">
+    <%= f.label :food %>
+    <%= f.number_field :food %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
+
+<%= render 'show' %>
