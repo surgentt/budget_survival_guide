@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root'budgets#home'
 
-  get '/budgets/' => 'budgets#new', :as => 'new_budget'
+  get '/income' => 'budgets#income', :as => 'new_budget'
   # get '/videos/:video_id' => 'videos#show', :as => 'video'
 
   # The priority is based upon order of creation: first created -> highest priority.
