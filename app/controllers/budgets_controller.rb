@@ -1,5 +1,26 @@
 class BudgetsController < ApplicationController
-  before_action :set_budget, only: [:show, :edit, :update, :destroy]
+  before_action :set_budget, only: [:edit, :update, :destroy]
+
+  def home
+
+  end
+
+  def income
+    @budget = Budget.new
+  end
+
+
+
+
+
+
+
+
+
+
+
+
+  ## Scaffolded Code
 
   # GET /budgets
   # GET /budgets.json
@@ -10,11 +31,8 @@ class BudgetsController < ApplicationController
   # GET /budgets/1
   # GET /budgets/1.json
   def show
-  end
-
-  # GET /budgets/new
-  def new
-    @budget = Budget.new
+    @budget = Budget.find(params[:id])
+    render :template => "budgets/slide" + params[:id] + ".html.erb"
   end
 
   # GET /budgets/1/edit

@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  resources :budgets
 
-  root'budgets#index'
+  root'budgets#home'
+
+  get '/budgets/' => 'budgets#new', :as => 'new_budget'
+  # get '/videos/:video_id' => 'videos#show', :as => 'video'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
