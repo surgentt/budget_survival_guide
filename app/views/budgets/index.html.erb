@@ -39,7 +39,7 @@
         <td><%= budget.emergency %></td>
         <td><%= budget.disposable_income %></td>
         <td><%= link_to 'Show', budget %></td>
-        <td><%= link_to 'Edit', edit_budget_path(budget) %></td>
+        <td><%= link_to 'Edit', budget_edit_path(budget) %></td>
         <td><%= link_to 'Destroy', budget, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

@@ -16,7 +16,6 @@ class BudgetsController < ApplicationController
   def update
     @budget = Budget.find(params[:id])
     if @budget.update(budget_params)
-      binding.pry
       redirect_to budget_edit_path(@budget, :section => next_budget_section)
     else
       render action: 'edit' 
@@ -32,6 +31,7 @@ class BudgetsController < ApplicationController
   end
 
   def destroy
+    @budget = Budget.find(params[:id])
     @budget.destroy
     respond_to do |format|
       format.html { redirect_to budgets_url }
