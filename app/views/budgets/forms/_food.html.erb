@@ -1,16 +1,15 @@
-<h2> How much do you plan on food a month? </h2>
+<h2>How much do you plan on food a month?</h2>
 
 <%= form_for(@budget) do |f| %>
 
   <div class="field">
-    <%= f.label :food %>
     <%= f.number_field :food %>
   </div>
 
   <%= hidden_field_tag(:section, "food") %>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div>
+    <%= f.submit "Next", class: "btn btn-default" %>
   </div>
 
 <% end %>

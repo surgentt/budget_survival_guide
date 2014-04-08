@@ -1,16 +1,16 @@
-<h2> Home much are you making next year? </h2>
+<h2>How much are you making next year?</h2>
 
-<%= form_for(@budget) do |f| %>
+<div class="row-fluid">
+  <%= form_for(@budget) do |f| %>
 
-  <div class="field">
-    <%= f.label :income %>
-    <%= f.number_field :income %>
-  </div>
+    <div class="form-group col-md-3">
+      <%= f.number_field :income, class: "form-control", autofocus: true %>
+    </div>
 
-  <%= hidden_field_tag(:section, "income") %>
+    <div class="row">
+      <%= f.submit "Next", class: "btn btn-default" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
-<% end %>
+    <%= hidden_field_tag(:section, "income") %>
+  <% end %>
+</div>

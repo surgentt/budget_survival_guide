@@ -2,14 +2,13 @@
 <%= form_for(@budget) do |f| %>
 
   <div class="field">
-    <%= f.label :laundry %>
     <%= f.number_field :laundry %>
   </div>
 
   <%= hidden_field_tag(:section, "laundry") %>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div>
+    <%= f.submit "Next", class: "btn btn-default" %>
   </div>
 
 <% end %>

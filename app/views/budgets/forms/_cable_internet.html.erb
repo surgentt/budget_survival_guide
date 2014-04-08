@@ -1,15 +1,14 @@
-<h2> What do you spend on your Cable and Internet? </h2>
+<h2> Do you want cable and internet? </h2>
 <%= form_for(@budget) do |f| %>
 
   <div class="field">
-    <%= f.label :cable_internet %>
     <%= f.number_field :cable_internet %>
   </div>
 
   <%= hidden_field_tag(:section, "cable_internet") %>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div>
+    <%= f.submit "Next", class: "btn btn-default" %>
   </div>
 
 <% end %>

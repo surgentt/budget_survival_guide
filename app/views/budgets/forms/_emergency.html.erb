@@ -1,14 +1,15 @@
+<h2>What size emergency fund do you want to save?</h2>
+
 <%= form_for(@budget) do |f| %>
 
   <div class="field">
-    <%= f.label :emergency %>
     <%= f.number_field :emergency %>
   </div>
 
   <%= hidden_field_tag(:section, "emergency") %>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div>
+    <%= f.submit "Next", class: "btn btn-default" %>
   </div>
 
 <% end %>

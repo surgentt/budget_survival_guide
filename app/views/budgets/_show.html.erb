@@ -1,72 +1,77 @@
-<p id="notice"><%= notice %></p>
+<table>
 
-<p>
-  <strong>Income:</strong>
-  <%= @budget.income %>
-</p>
+  <tr>
+    <th COLSPAN="2" class="text-center"><u>Budget</u></th>
+  </tr>
 
-<p>
-  <strong>Healthcare:</strong>
-  <%= @budget.healthcare %>
-</p>
+  <tr>
+    <td><strong>Income:</strong></td>
+    <td><%= @budget.income %></td>
+  </tr>
 
-<p>
-  <strong>State:</strong>
-  <%= @budget.state %>
-</p>
+<!--   <tr>
+    <td><strong>Healthcare:</strong></td>
+    <td><%#= @budget.healthcare %></td>
+  </tr> -->
 
-<p>
-  <strong>Income after taxes:</strong>
-  <%= @budget.income_after_taxes %>
-</p>
+  <tr>
+    <td><strong>Tax Rate:</strong></td>
+    <td><%#= @budget.state %></td>
+  </tr>
 
-<p>
-  <strong>Housing:</strong>
-  <%= @budget.housing %>
-</p>
+  <tr>
+    <td><strong>Income after taxes:</strong></td>
+    <td><%= @budget.income_after_taxes %></td>
+  </tr>
 
-<p>
-  <strong>Cable internet:</strong>
-  <%= @budget.cable_internet %>
-</p>
+  <tr>
+    <td><strong>Housing:</strong></td>
+    <td><%= @budget.housing %></td>
+  </tr>
 
-<p>
-  <strong>Utilities:</strong>
-  <%= @budget.utilities %>
-</p>
+  <tr>
+    <td><strong>Cable &amp; Internet:</strong></td>
+    <td><%= @budget.cable_internet %></td>
+  </tr>
 
-<p>
-  <strong>Laundry:</strong>
-  <%= @budget.laundry %>
-</p>
+  <tr>
+    <td><strong>Utilities:</strong></td>
+    <td><%= @budget.utilities %></td>
+  </tr>
 
-<p>
-  <strong>Commute:</strong>
-  <%= @budget.commute %>
-</p>
+  <tr>
+    <td><strong>Laundry:</strong></td>
+    <td><%= @budget.laundry %></td>
+  </tr>
 
-<p>
-  <strong>Food:</strong>
-  <%= @budget.food %>
-</p>
+  <tr>
+    <td><strong>Commute:</strong></td>
+    <td><%= @budget.commute %></td>
+  </tr>
 
-<p>
-  <strong>Debt service:</strong>
-  <%= @budget.debt_service %>
-</p>
+  <tr>
+    <td><strong>Food:</strong></td>
+    <td><%= @budget.food %></td>
+  </tr>
 
-<p>
-  <strong>Investing:</strong>
-  <%= @budget.investing %>
-</p>
+  <tr>
+    <td><strong>Debt Payments:</strong></td>
+    <td><%= @budget.debt_service %></td>
+  </tr>
 
-<p>
-  <strong>Emergency:</strong>
-  <%= @budget.emergency %>
-</p>
+  <tr>
+    <td><strong>Investing:</strong></td>
+    <td><%= @budget.investing %></td>
+  </tr>
 
-<p>
-  <strong>Disposable income:</strong>
-  <%= @budget.disposable_income %>
-</p>
+  <tr>
+    <td><strong>Emergency:</strong></td>
+    <td><%= @budget.emergency %></td>
+  </tr>
 
+  <tr>
+    <td><strong>Disposable income:</strong></td>
+    <td><%= @budget.disposable_income %></td>
+  </tr>
+
+</table>
