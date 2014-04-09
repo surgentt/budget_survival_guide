@@ -10,4 +10,12 @@ class Budget < ActiveRecord::Base
     self.income_after_taxes
   end
 
+  def disposable_income
+    self.disposable_income = self.income_after_taxes - ((self.housing * 12) + (self.cable_internet * 12) + (self.utilities * 12) + (self.laundry * 12) + (self.commute * 12) + (self.food * 12) + (self.debt_service * 12) + (self.investing * 12) + (self.emergency * 12))
+  end
+
+  def monthly_disposable_income
+    self.disposable_income / 12
+  end
+
 end
