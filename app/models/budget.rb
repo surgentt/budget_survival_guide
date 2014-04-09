@@ -26,24 +26,12 @@ class Budget < ActiveRecord::Base
     end
   end
 
-  def disposable_income
+  def disposable_income_calc
     if self.housing != nil && self.cable_internet != nil && self.utilities != nil && self.laundry != nil && self.laundry != nil && self.commute != nil && self.food != nil && self.debt_service != nil && self.investing != nil && self.emergency != nil
-      self.disposable_income = self.income_after_taxes 
-                            - ((self.housing * 12) 
-                            + (self.cable_internet * 12) 
-                            + (self.utilities * 12) 
-                            + (self.laundry * 12) 
-                            + (self.commute * 12) 
-                            + (self.food * 12) 
-                            + (self.debt_service * 12) 
-                            + (self.investing * 12) 
-                            + (self.emergency * 12))
-    end
-  end
-
-  def monthly_disposable_income
-    if self.disposable_income != nil
-      self.disposable_income / 12
+      self.disposable_income = (self.income_after_taxes / 12) - self.housing + self.cable_internet  + self.utilities + self.laundry + self.commute + self.food + self.debt_service + self.investing + self.emergency
+      #binding.pry
+      self.save
+      self.disposable_income
     end
   end
 

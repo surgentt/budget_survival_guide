@@ -4,11 +4,11 @@
   <%= form_for(@budget) do |f| %>
 
     <div class="form-group col-md-3 col-xs-3">
-      <%= f.select(:state, state_list, {}, {class: "form-control"}) %>
+      <%= f.select(:state, state_list, {}, {class: "form-control"} ) %>
     </div>
 
     <div class="row">
-      <%= f.submit "Next", class: "btn btn-default" %>
+      <%= f.submit "Next", class: "btn btn-default", autofocus: true %>
     </div>
 
     <%= hidden_field_tag(:section, "state") %>
