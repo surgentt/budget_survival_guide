@@ -6,7 +6,7 @@
 
   <tr>
     <td><strong>Income:</strong></td>
-    <td><%= @budget.income_in_months %></td>
+    <td><%= number_with_delimiter(@budget.income_in_months, :delimiter => ',') %></td>
   </tr>
 
   <tr>
@@ -16,57 +16,60 @@
 
   <tr>
     <td><strong>Income after taxes:</strong></td>
-    <td><%= @budget.income_after_taxes_in_months %></td>
+    <td>
+    <%= number_with_delimiter(@budget.income_after_taxes_in_months, :delimiter => ',') %>
+    </td>
   </tr>
 
   <tr>
     <td><strong>Housing:</strong></td>
-    <td><%= @budget.housing %></td>
+    <td><%= number_with_delimiter(@budget.housing, :delimiter => ',') %></td>
   </tr>
 
   <tr>
     <td><strong>Cable &amp; Internet:</strong></td>
-    <td><%= @budget.cable_internet %></td>
+    <td><%= number_with_delimiter(@budget.cable_internet, :delimiter => ',') %></td>
   </tr>
 
   <tr>
     <td><strong>Utilities:</strong></td>
-    <td><%= @budget.utilities %></td>
+    <td><%= number_with_delimiter(@budget.utilities, :delimiter => ',') %></td>
   </tr>
 
   <tr>
     <td><strong>Laundry:</strong></td>
-    <td><%= @budget.laundry %></td>
+    <td><%= number_with_delimiter(@budget.laundry, :delimiter => ',') %></td>
+
   </tr>
 
   <tr>
     <td><strong>Commute:</strong></td>
-    <td><%= @budget.commute %></td>
+    <td><%= number_with_delimiter(@budget.commute, :delimiter => ',') %></td>
   </tr>
 
   <tr>
     <td><strong>Food:</strong></td>
-    <td><%= @budget.food %></td>
+    <td><%= number_with_delimiter(@budget.food, :delimiter => ',') %></td>
   </tr>
 
   <tr>
     <td><strong>Debt Payments:</strong></td>
-    <td><%= @budget.debt_service %></td>
+    <td><%= number_with_delimiter(@budget.debt_service, :delimiter => ',') %></td>
   </tr>
 
   <tr>
     <td><strong>Investing:</strong></td>
-    <td><%= @budget.investing %></td>
+    <td><%= number_with_delimiter(@budget.investing, :delimiter => ',') %></td>
   </tr>
 
   <tr>
     <td><strong>Emergency:</strong></td>
-    <td><%= @budget.emergency %></td>
+    <td><%= number_with_delimiter(@budget.emergency, :delimiter => ',') %></td>
   </tr>
 
   <tr>
     <td><strong>Monthly Disposable income:</strong></td>
-    <td><%= @budget.monthly_disposable_income %></td>
+    <td><%= number_with_delimiter(@budget.monthly_disposable_income, :delimiter => ',') %></td>
   </tr>
 
 </table>
