@@ -5,8 +5,9 @@ class Budget < ActiveRecord::Base
   end
 
   def income_after_taxes_calc
-    income_after_taxes = income * (1-translate_state_to_tax)
-    income_after_taxes.save
+    self.income_after_taxes = self.income * (1 - translate_state_to_tax)
+    self.save
+    self.income_after_taxes
   end
 
 end

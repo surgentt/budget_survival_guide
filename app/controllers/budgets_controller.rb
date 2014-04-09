@@ -1,5 +1,5 @@
 class BudgetsController < ApplicationController
-  Sections = ["income", "state", "income_after_taxes", "housing", "cable_internet", "utilities", "laundry", "commute", "food", "debt_service", "investing", "emergency", "result"]
+  Sections = ["income", "state", "housing", "cable_internet", "utilities", "laundry", "commute", "food", "debt_service", "investing", "emergency", "result"]
 
   def home
   end
