@@ -1,7 +1,9 @@
 class Budget < ActiveRecord::Base
 
   def translate_state_to_tax
-    0.45
+    if self.state != nil
+      0.45
+    end
   end
 
   def income_after_taxes_calc
@@ -25,7 +27,8 @@ class Budget < ActiveRecord::Base
   end
 
   def disposable_income
-    self.disposable_income = self.income_after_taxes 
+    if self.housing != nil && self.cable_internet != nil && self.utilities != nil && self.laundry != nil && self.laundry != nil && self.commute != nil && self.food != nil && self.debt_service != nil && self.investing != nil && self.emergency != nil
+      self.disposable_income = self.income_after_taxes 
                             - ((self.housing * 12) 
                             + (self.cable_internet * 12) 
                             + (self.utilities * 12) 
@@ -35,10 +38,13 @@ class Budget < ActiveRecord::Base
                             + (self.debt_service * 12) 
                             + (self.investing * 12) 
                             + (self.emergency * 12))
+    end
   end
 
   def monthly_disposable_income
-    self.disposable_income / 12
+    if self.disposable_income != nil
+      self.disposable_income / 12
+    end
   end
 
 end

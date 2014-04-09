@@ -11,7 +11,7 @@
 
   <tr>
     <td><strong>Tax Rate:</strong></td>
-    <td><%= 0.45 %></td>
+    <td><%= @budget.translate_state_to_tax %></td>
   </tr>
 
   <tr>
@@ -65,11 +65,6 @@
   <tr>
     <td><strong>Emergency:</strong></td>
     <td><%= number_with_delimiter(@budget.emergency, :delimiter => ',') %></td>
-  </tr>
-
-  <tr>
-    <td><strong>Annual Disposable income:</strong></td>
-    <td><%= number_with_delimiter(@budget.disposable_income, :delimiter => ',') %></td>
   </tr>
 
   <tr>
