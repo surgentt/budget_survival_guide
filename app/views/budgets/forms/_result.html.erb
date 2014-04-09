@@ -1,3 +1,9 @@
 <h2>Checkout your budget</h2>
 
-<p>Total amount in your emergency fund at the end of the year: $<%= @budget.emergency * 12 %> </p>
+<h3>You can buy <%= @budget.disposable_income / 3 %> beers!!</h3>
+
+<% (@budget.disposable_income / 3).times do %>
+ <%= image_tag("beer.png", height: '32', width: '32') %>
+<% end %>
+
+<h4>Total amount in your emergency fund at the end of the year: $<%= @budget.emergency * 12 %></h4>
