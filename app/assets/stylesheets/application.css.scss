@@ -43,6 +43,13 @@ body {
   text-align: center;
 }
 
-.table{
-//  border: 1px solid black;
+.table {
+  td:nth-child(2){
+    text-align: right;
+    cursor: pointer;
+  }
+}
+
+.clickableRow {
+  cursor: pointer;
 }

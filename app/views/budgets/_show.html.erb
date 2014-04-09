@@ -4,12 +4,12 @@
     <th COLSPAN="2" class="text-center"><u>Monthly Budget</u></th>
   </tr>
 
-  <tr>
+  <tr class='clickableRow' href='income'>
     <td><strong>Income:</strong></td>
     <td><%= number_with_delimiter(@budget.income_in_months, :delimiter => ',') %></td>
   </tr>
 
-  <tr>
+  <tr class='clickableRow' href='state'>
     <td><strong>Tax Rate:</strong></td>
     <td><%= @budget.translate_state_to_tax %></td>
   </tr>
@@ -21,53 +21,53 @@
     </td>
   </tr>
 
-  <tr>
+  <tr class='clickableRow' href='housing'>
     <td><strong>Housing:</strong></td>
     <td><%= number_with_delimiter(@budget.housing, :delimiter => ',') %></td>
   </tr>
 
-  <tr>
+  <tr class='clickableRow' href='cable_internet'>
     <td><strong>Cable &amp; Internet:</strong></td>
     <td><%= number_with_delimiter(@budget.cable_internet, :delimiter => ',') %></td>
   </tr>
 
-  <tr>
+  <tr class='clickableRow' href='utilities'>
     <td><strong>Utilities:</strong></td>
     <td><%= number_with_delimiter(@budget.utilities, :delimiter => ',') %></td>
   </tr>
 
-  <tr>
+  <tr class='clickableRow' href='laundry'>
     <td><strong>Laundry:</strong></td>
     <td><%= number_with_delimiter(@budget.laundry, :delimiter => ',') %></td>
 
   </tr>
 
-  <tr>
+  <tr class='clickableRow' href='commute'>
     <td><strong>Commute:</strong></td>
     <td><%= number_with_delimiter(@budget.commute, :delimiter => ',') %></td>
   </tr>
 
-  <tr>
+  <tr class='clickableRow' href='food'>
     <td><strong>Food:</strong></td>
     <td><%= number_with_delimiter(@budget.food, :delimiter => ',') %></td>
   </tr>
 
-  <tr>
+  <tr class='clickableRow' href='debt_service'>
     <td><strong>Debt Payments:</strong></td>
     <td><%= number_with_delimiter(@budget.debt_service, :delimiter => ',') %></td>
   </tr>
 
-  <tr>
+  <tr class='clickableRow' href='investing'>
     <td><strong>Investing:</strong></td>
     <td><%= number_with_delimiter(@budget.investing, :delimiter => ',') %></td>
   </tr>
 
-  <tr>
+  <tr class='clickableRow' href='emergency'>
     <td><strong>Emergency:</strong></td>
     <td><%= number_with_delimiter(@budget.emergency, :delimiter => ',') %></td>
   </tr>
 
-  <tr>
+  <tr class='clickableRow' href='result'>
     <td><strong>Disposable income:</strong></td>
     <td><%= number_with_delimiter(@budget.disposable_income_calc, :delimiter => ',') %></td>
   </tr>
