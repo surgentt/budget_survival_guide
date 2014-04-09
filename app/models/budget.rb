@@ -5,9 +5,11 @@ class Budget < ActiveRecord::Base
   end
 
   def income_after_taxes_calc
-    self.income_after_taxes = self.income * (1 - translate_state_to_tax)
-    self.save
-    self.income_after_taxes
+    if self.income != nil
+      self.income_after_taxes = self.income * (1 - translate_state_to_tax)
+      self.save
+      self.income_after_taxes
+    end
   end
 
   def disposable_income
