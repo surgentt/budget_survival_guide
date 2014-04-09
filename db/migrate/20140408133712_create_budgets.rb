@@ -3,7 +3,7 @@ class CreateBudgets < ActiveRecord::Migration
     create_table :budgets do |t|
       t.integer :income
       t.integer :healthcare
-      t.string :state
+      t.string  :state
       t.integer :income_after_taxes
       t.integer :housing
       t.integer :cable_internet
