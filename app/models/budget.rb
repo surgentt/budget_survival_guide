@@ -1,7 +1,9 @@
 class Budget < ActiveRecord::Base
 
   def translate_state_to_tax
-    0.45
+    if self.state != nil
+      0.45
+    end
   end
 
   def income_after_taxes_calc
