@@ -8,8 +8,11 @@ Rails.application.routes.draw do
 
   end
 
+<<<<<<< HEAD
   match '/about', to: 'budgets#about', via: 'get'
 
 
 
+=======
+>>>>>>> 4adf4de6e1cf9d3fe991102fdf71c6c978bbd305
 end

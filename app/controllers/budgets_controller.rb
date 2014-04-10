@@ -22,24 +22,10 @@ class BudgetsController < ApplicationController
     end
   end
 
-  def show
-    @budget = Budget.find(params[:id])
-  end
-
-  def destroy
-    @budget = Budget.find(params[:id])
-    @budget.destroy
-    respond_to do |format|
-      format.html { redirect_to budgets_url }
-      format.json { head :no_content }
-    end
-  end
-
   def about
   end
 
   private
-    # Never trust parameters from the scary internet, only allow the white list through.
     def budget_params
       params.require(:budget).permit(:income, :healthcare, :state, :income_after_taxes, :housing, :cable_internet, :utilities, :laundry, :commute, :food, :debt_service, :investing, :emergency, :disposable_income)
     end
