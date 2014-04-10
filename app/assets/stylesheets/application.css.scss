@@ -53,3 +53,13 @@ body {
 .clickableRow {
   cursor: pointer;
 }
+
+.background_beer {
+  background-image: url('beer.png');
+  background-repeat:repeat;
+  height: 32px;
+}
+
+.progress-bar {
+  width: 1%;
+}

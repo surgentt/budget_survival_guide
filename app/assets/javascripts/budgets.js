@@ -10,15 +10,37 @@ jQuery(document).ready(function($) {
     var numOfBeers = Math.round(result / 3);
     $('span#numOfBeers').append(numOfBeers);
 
-
-    for(var i=0; i<numOfBeers; i++) {
-      $('div.beerPictures').animate("<img alt='Beer' class='beer' height='32' src='/assets/beer.png' width='32'>");
+    function changeProgress(int){
+     $("div.progress-bar").css("width", 100+"%")
     }
 
-    // var myVar = setInterval(function(){showBeer()},1);
+    start = 0
+    setTimeout(function(){
+      changeProgress(start)
+    }, 1000)
 
-    // function showBeer(){
-      
+
+    // Won't stop
+
+    var transition = function() {
+      $('div.beerPictures').append("<img alt='Beer' class='beer' height='32' src='/assets/beer.png' width='32'>");
+    }
+
+    setInterval(transition, 10);
+
+    clearInterval(transition);
+
+
+
+
+    // Not working!!
+
+    // $( "div.beerPictures'" ).animate({ "width": numOfBeers }, "slow" );
+
+    // var myVar = setInterval(function(){showBeer()},1000);
+
+    // function showBeer() {
+    //   $('div.beerPictures').append("<img alt='Beer' class='beer' height='32' src='/assets/beer.png' width='32'>");
     // }
 
     // function myStopFunction() {
