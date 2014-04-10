@@ -35,6 +35,9 @@ class BudgetsController < ApplicationController
     end
   end
 
+  def about
+  end
+
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def budget_params
