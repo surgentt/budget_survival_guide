@@ -29,9 +29,26 @@ class Budget < ActiveRecord::Base
   def disposable_income_calc
     if self.housing != nil && self.cable_internet != nil && self.utilities != nil && self.laundry != nil && self.laundry != nil && self.commute != nil && self.food != nil && self.debt_service != nil && self.investing != nil && self.emergency != nil
       self.disposable_income = income_after_taxes_in_months - self.housing - self.cable_internet  - self.utilities - self.laundry - self.commute - self.food - self.debt_service - self.investing - self.emergency
-      #binding.pry
       self.save
       self.disposable_income
+    end
+  end
+
+  def beers
+    if self.disposable_income != nil
+      self.disposable_income / 3
+    end
+  end
+
+  def beers_times
+    if beers != nil
+      beers.times
+    end
+  end
+
+  def emergency_yearly
+    if self.emergency != nil 
+      self.emergency * 12
     end
   end
 

@@ -1,15 +1,9 @@
 <h2>Checkout your budget</h2>
 
-<h3>You can buy <%= @budget.disposable_income / 3 %> beers!!</h3>
+<h3>You can buy <span id="numOfBeers"></span> beers!!</h3>
 
-<%# content_for(:javascript) do %>
-  <% (@budget.disposable_income / 3).times do %>
-      <script type="text/javascript"></script>
-      <%= image_tag("beer.png", height: '32', width: '32') %>
+  <div class="beerPictures">
 
-      
-      
-  <% end %>
-<%# end %>
+  </div>
 
-<h4>Total amount in your emergency fund at the end of the year: $<%= @budget.emergency * 12 %></h4>
+<h4>Total amount in your emergency fund at the end of the year: $<%= @budget.emergency_yearly %></h4>
