@@ -35,7 +35,7 @@ jQuery(document).ready(function($) {
       }, 15);
     } else {
       $('div#budget_result').empty();
-      $('div#budget_result').append("<h2>Please complete all questions</h2>");
+      $('div#budget_result').append("<h2>Please go back and complete all questions</h2>");
     }
   }
 });
