@@ -17,13 +17,11 @@ class Budget < ActiveRecord::Base
   end
 
   def income_after_taxes_in_months
-    if self.income != nil && self.state != nil
-      self.income_after_taxes_calc / 12
-    end
+    self.income.present? && self.state.present? && self.income_after_taxes_calc / 12
   end
 
   def disposable_income_calc
-    if self.housing != nil && self.cable_internet != nil && self.utilities != nil && self.laundry != nil && self.laundry != nil && self.commute != nil && self.food != nil && self.debt_service != nil && self.investing != nil && self.emergency != nil
+    if self.housing.present? && self.cable_internet.present? && self.utilities.present? && self.laundry.present? && self.laundry.present? && self.commute.present? && self.food.present? && self.debt_service.present? && self.investing.present? && self.emergency.present?
       self.disposable_income = income_after_taxes_in_months - self.housing - self.cable_internet  - self.utilities - self.laundry - self.commute - self.food - self.debt_service - self.investing - self.emergency
       self.save
       self.disposable_income
@@ -31,9 +29,7 @@ class Budget < ActiveRecord::Base
   end
 
   def emergency_yearly
-    if self.emergency != nil 
-      self.emergency * 12
-    end
+    self.emergency.present? && self.emergency * 12
   end
 
 end

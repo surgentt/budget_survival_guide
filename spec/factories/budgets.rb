@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :budget do
     income 72000
-    healthcare 200
-    state "New York"
-    income_after_taxes 
+    healthcare 0
+    state "NY"
+    income_after_taxes 50400
     housing 1325
     cable_internet 80
     utilities 41
@@ -13,6 +13,6 @@ FactoryGirl.define do
     debt_service 100
     investing 300
     emergency 100
-    disposable_income 
+    disposable_income 1652
   end
 end
