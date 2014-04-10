@@ -1,19 +1,21 @@
 <h2>Checkout your budget</h2>
 
-<h3>You can buy <span id="numOfBeers"></span> beers!!</h3>
+<div id="budget_result">
+  <h3>You can now buy <span id="numOfBeers"></span> beers!!</h3>
 
-  <div class="progress progress-striped  active">
-    <div class="progress-bar"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
-      <span class="sr-only">45% Complete</span>
+    <div class="progress progress-striped  active">
+      <div class="progress-bar"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+        <span class="sr-only">45% Complete</span>
+      </div>
     </div>
-  </div>
 
-  <div class="background_beer">
+    <div class="background_beer">
 
-  </div>
+    </div>
 
-  <div class="beerPictures">
+    <div class="beerPictures">
 
-  </div>
+    </div>
 
-<h4>Total amount in your emergency fund at the end of the year: $<%= @budget.emergency_yearly %></h4>
+  <h4>*Total amount in your emergency fund at the end of the year: $<%= @budget.emergency_yearly %></h4>
+</div>

@@ -7,18 +7,14 @@ jQuery(document).ready(function($) {
     var result = $('#result').text();
     result = result.split(",").join("");
     result = parseInt(result);
+
+    if(result < 0){
+      $('div#budget_result').empty();
+      $('div#budget_result').append("<h2>You're broke... maybe you should adjust your budget</h2>");
+      $('div#budget_result').append("<img alt='Poor' class='poor' src='/assets/poor.png'>");
+    }
+
     var numOfBeers = Math.round(result / 3);
-
-    // var progress = 0;
-
-    // function changeProgress(int){
-    //   $("div.progress-bar").css("width", int+"%")
-    //   progress 
-    // }
-
-    // setTimeout(function(){
-    //   changeProgress(start)
-    // }, 1000)
 
     var counter = 0;
     var percent_complete = 0;
