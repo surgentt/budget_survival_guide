@@ -8,44 +8,37 @@ jQuery(document).ready(function($) {
     result = result.split(",").join("");
     result = parseInt(result);
     var numOfBeers = Math.round(result / 3);
-    $('span#numOfBeers').append(numOfBeers);
 
-    function changeProgress(int){
-     $("div.progress-bar").css("width", 100+"%")
-    }
+    // var progress = 0;
 
-    start = 0
-    setTimeout(function(){
-      changeProgress(start)
-    }, 1000)
+    // function changeProgress(int){
+    //   $("div.progress-bar").css("width", int+"%")
+    //   progress 
+    // }
 
+    // setTimeout(function(){
+    //   changeProgress(start)
+    // }, 1000)
 
-    // Won't stop
+    var counter = 0;
+    var percent_complete = 0;
 
     var transition = function() {
+      counter ++;
       $('div.beerPictures').append("<img alt='Beer' class='beer' height='32' src='/assets/beer.png' width='32'>");
+      $('span#numOfBeers').empty(counter);
+      $('span#numOfBeers').append(counter);
+      percent_complete = (counter / numOfBeers) * 100
+      $("div.progress-bar").css("width", percent_complete+"%")
     }
 
-    setInterval(transition, 10);
-
-    clearInterval(transition);
-
-
-
-
-    // Not working!!
-
-    // $( "div.beerPictures'" ).animate({ "width": numOfBeers }, "slow" );
-
-    // var myVar = setInterval(function(){showBeer()},1000);
-
-    // function showBeer() {
-    //   $('div.beerPictures').append("<img alt='Beer' class='beer' height='32' src='/assets/beer.png' width='32'>");
-    // }
-
-    // function myStopFunction() {
-    //   clearInterval(myVar);
-    // }
+    var loadBeer = setInterval(function(){
+      if (counter < numOfBeers){
+        transition()
+      } else{
+        clearInterval(loadBeer)
+      }
+    }, 15);
 
   }
 });
