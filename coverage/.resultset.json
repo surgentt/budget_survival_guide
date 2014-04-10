@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/brianpisano/Development/code/project_mode/budget_survival_guide/app/models/budget.rb": [
+      "/Users/thomassurgent/Desktop/flatiron/Project_Mode/2wk/budget_survival_guide/app/models/budget.rb": [
         1,
         null,
         1,
@@ -39,6 +39,6 @@
         null
       ]
     },
-    "timestamp": 1397162626
+    "timestamp": 1397165589
   }
 }

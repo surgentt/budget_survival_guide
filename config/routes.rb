@@ -7,5 +7,4 @@ Rails.application.routes.draw do
       :defaults => {:section => BudgetsController::Sections.first}
   end
 
-
 end
