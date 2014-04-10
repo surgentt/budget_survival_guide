@@ -8,9 +8,6 @@ jQuery(document).ready(function($) {
     result = result.split(",").join("");
     result = parseInt(result);
 
-    $('div#budget_result').empty();
-    $('div#budget_result').append("<h2>Please complete all questions</h2>");
-
     if (result < 0) {
       $('div#budget_result').empty();
       $('div#budget_result').append("<h2>You're broke... maybe you should adjust your budget</h2>");
@@ -36,7 +33,9 @@ jQuery(document).ready(function($) {
           clearInterval(loadBeer)
         }
       }, 15);
+    } else {
+      $('div#budget_result').empty();
+      $('div#budget_result').append("<h2>Please complete all questions</h2>");
     }
-
   }
 });
