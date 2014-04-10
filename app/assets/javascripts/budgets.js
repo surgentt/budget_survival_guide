@@ -8,33 +8,35 @@ jQuery(document).ready(function($) {
     result = result.split(",").join("");
     result = parseInt(result);
 
-    if(result < 0){
+    $('div#budget_result').empty();
+    $('div#budget_result').append("<h2>Please complete all questions</h2>");
+
+    if (result < 0) {
       $('div#budget_result').empty();
       $('div#budget_result').append("<h2>You're broke... maybe you should adjust your budget</h2>");
-      $('div#budget_result').append("<img alt='Poor' class='poor' src='/assets/poor.png'>");
-    }
+      $('div#budget_result').append("<img alt='Poor' class='poor' src='/assets/poor.png'>"); 
+    } else if (result > 0 ) {
+      var numOfBeers = Math.round(result / 3);
+      var counter = 0;
+      var percent_complete = 0;
 
-    var numOfBeers = Math.round(result / 3);
-
-    var counter = 0;
-    var percent_complete = 0;
-
-    var transition = function() {
-      counter ++;
-      $('div.beerPictures').append("<img alt='Beer' class='beer' height='32' src='/assets/beer.png' width='32'>");
-      $('span#numOfBeers').empty(counter);
-      $('span#numOfBeers').append(counter);
-      percent_complete = (counter / numOfBeers) * 100
-      $("div.progress-bar").css("width", percent_complete+"%")
-    }
-
-    var loadBeer = setInterval(function(){
-      if (counter < numOfBeers){
-        transition()
-      } else{
-        clearInterval(loadBeer)
+      var transition = function() {
+        counter ++;
+        $('div.beerPictures').append("<img alt='Beer' class='beer' height='32' src='/assets/beer.png' width='32'>");
+        $('span#numOfBeers').empty(counter);
+        $('span#numOfBeers').append(counter);
+        percent_complete = (counter / numOfBeers) * 100
+        $("div.progress-bar").css("width", percent_complete+"%")
       }
-    }, 15);
+
+      var loadBeer = setInterval(function(){
+        if (counter < numOfBeers){
+          transition()
+        } else{
+          clearInterval(loadBeer)
+        }
+      }, 15);
+    }
 
   }
 });
