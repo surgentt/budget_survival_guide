@@ -1,20 +1,18 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
 FactoryGirl.define do
   factory :budget do
-    income 1
-    healthcare 1
-    state "MyString"
-    income_after_taxes 1
-    housing 1
-    cable_internet 1
-    utilities 1
-    laundry 1
-    commute 1
-    food 1
-    debt_service 1
-    investing 1
-    emergency 1
-    disposable_income 1
+    income 72000
+    healthcare 200
+    state "New York"
+    income_after_taxes 
+    housing 1325
+    cable_internet 80
+    utilities 41
+    laundry 90
+    commute 112
+    food 400
+    debt_service 100
+    investing 300
+    emergency 100
+    disposable_income 
   end
 end

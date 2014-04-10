@@ -15,9 +15,7 @@ class Budget < ActiveRecord::Base
   end
 
   def income_in_months
-    if self.income != nil
-      self.income / 12
-    end
+    self.income.present? && self.income / 12
   end
 
   def income_after_taxes_in_months
@@ -31,18 +29,6 @@ class Budget < ActiveRecord::Base
       self.disposable_income = income_after_taxes_in_months - self.housing - self.cable_internet  - self.utilities - self.laundry - self.commute - self.food - self.debt_service - self.investing - self.emergency
       self.save
       self.disposable_income
-    end
-  end
-
-  def beers
-    if self.disposable_income != nil
-      self.disposable_income / 3
-    end
-  end
-
-  def beers_times
-    if beers != nil
-      beers.times
     end
   end
 

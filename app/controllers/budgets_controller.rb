@@ -22,10 +22,6 @@ class BudgetsController < ApplicationController
     end
   end
 
-  def index
-    @budgets = Budget.all
-  end
-
   def show
     @budget = Budget.find(params[:id])
   end
