@@ -24,17 +24,22 @@ body {
   padding-bottom: 30px;
 }
 
-footer {
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+#footer {
   position: absolute;
   bottom: 0;
-  height: 50px;
-  clear: both;
-  padding-top: 10px;
-  background-color: whitesmoke;
   width: 100%;
-  color: rgba(127, 140, 141,1.0);
+  height: 60px;
+  background-color: #f5f5f5;
+  padding-top: 15px;
   text-align: right;
-  padding-right: 30px;
 }
 
 .theme-dropdown .dropdown-menu {
