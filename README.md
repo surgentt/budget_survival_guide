@@ -2,38 +2,25 @@
 
 ## Description
 
-Add a short description of your app.
+Budget Survival Guide is a Ruby on Rails application that helps users create a quick and simple monthly budget. 
 
 ## Screenshots
 
-Add some spiffy screenshots of your app here.
+Here is one sample results page.
+![Imgur] fasd(http://i.imgur.com/qDKsIB9.png
 
-## Background
-
-Why did you want to make this app? What was your development process
-like?
-
-## Features
-
-Bullet point some of the key features of your app here.
 
 ## Usage
 
-How do users use your app?
+This application is designed for people, who have or will soon receive full time jobs and want to estimate their savings. 
 
 ## Development/Contribution
 
-Explain how people can contribute to your app. How should they write tests?
-Any things in particular you'd like to see in pull requests?
-
-## Future
-
-What features are you currently working on? Only mention things that you
-actually are implementing. No pie-in-the-sky-never-gonna-happen stuff.
+We love pull requests! All we ask is that you submit RSpec tests along with any request.
 
 ## Author
 
-Link to your blog, twitter, etc!
+Made with love at the [Flatiron School](www.flatironschool.com) by [Thomas Surgent](www.twitter.com/surgentt) and [Brian Pisano](https://twitter.com/brianpisano87) 
 
 ## License
 
