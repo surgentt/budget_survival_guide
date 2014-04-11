@@ -4,6 +4,9 @@ class BudgetsController < ApplicationController
   def home
   end
 
+  def about
+  end
+
   def create
     @budget = Budget.create
     redirect_to budget_edit_path(@budget)
@@ -20,9 +23,6 @@ class BudgetsController < ApplicationController
     else
       render action: 'edit' 
     end
-  end
-
-  def about
   end
 
   private
