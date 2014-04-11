@@ -2,13 +2,6 @@ require 'spec_helper'
 
 describe BudgetsController do
 
-  describe "GET #home" do 
-    it "renders the home template" do
-      get :home
-      expect(response).to render_template("home")
-    end
-  end
-
   describe "GET #edit" do
     it "renders the :edit template with the income section by default" do 
       budget = create(:budget)

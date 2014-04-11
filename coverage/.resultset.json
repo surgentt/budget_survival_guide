@@ -1,46 +1,18 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/thomassurgent/Desktop/flatiron/Project_Mode/2wk/budget_survival_guide/app/models/budget.rb": [
+      "/Users/thomassurgent/Desktop/flatiron/Project_Mode/2wk/budget_survival_guide/app/controllers/pages_controller.rb": [
         1,
         null,
         1,
-        27,
-        25,
-        null,
         null,
         null,
         1,
-        14,
-        14,
-        14,
-        14,
-        null,
-        null,
-        null,
-        1,
-        13,
-        null,
-        null,
-        1,
-        15,
-        null,
-        null,
-        1,
-        13,
-        2,
-        2,
-        2,
-        null,
-        null,
-        null,
-        1,
-        2,
         null,
         null,
         null
       ]
     },
-    "timestamp": 1397243498
+    "timestamp": 1397246099
   }
 }

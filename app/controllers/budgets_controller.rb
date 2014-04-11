@@ -1,12 +1,6 @@
 class BudgetsController < ApplicationController
   Sections = ["income", "state", "housing", "cable_internet", "utilities", "laundry", "commute", "food", "debt_service", "investing", "emergency", "result"]
 
-  def home
-  end
-
-  def about
-  end
-
   def create
     @budget = Budget.create
     redirect_to budget_edit_path(@budget)
