@@ -7,8 +7,7 @@ Budget Survival Guide is a Ruby on Rails application that helps users create a q
 ## Screenshots
 
 Here is one sample results page.
-![Imgur] fasd(http://i.imgur.com/qDKsIB9.png
-
+![Imgur](http://i.imgur.com/qDKsIB9.png)
 
 ## Usage
 
