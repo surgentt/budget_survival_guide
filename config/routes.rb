@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
-  get "users/new"
+  resources :users
 
   match '/signup',  to: 'users#new', via: 'get', :as => 'signup'
   match '/about', to: 'pages#about', via: 'get'
