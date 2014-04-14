@@ -3,8 +3,7 @@
 <div class="row">
   <div class="col-md-3 col-xs-4 col-centered">
     <%= form_for(:session, url: sessions_path) do |f| %>
-      <%#= render 'shared/error_messages' %>
-
+    
       <div class="form-group">
         <%= f.label :email %>
         <%= f.text_field :email, class: "form-control", autofocus: true %>

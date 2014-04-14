@@ -3,7 +3,7 @@ require 'spec_helper'
 describe User do
 
   it "is valid with a email and password" do 
-    user = User.new(email: "surgentt@gmail.com", password: 'password', password_confirmation: "password")
+    user = User.new(email: "surgentt@gmail.com", password: 'password')
     expect(user).to be_valid
   end
 
@@ -17,26 +17,30 @@ describe User do
     expect(user).to have(2).errors_on(:password)
   end
 
+  describe "::create_guest" do
+    it "should create a guest user and can succeed twice" do 
+      count = User.all.count
+      User.create_guest
+      User.create_guest
+      expect(User.count).to eq(count+2)
+    end
+  end
+
   describe "password format and presence" do 
     it "needs a password in order to be present" do 
-      user = User.new(email: "Surgentt@gmail.com", password: '', password_confirmation: "")
+      user = User.new(email: "Surgentt@gmail.com", password: '')
       expect(user).to have(2).errors_on(:password)
     end
 
-    it "expects password and password_confirmation to match" do 
-      user = User.new(email: "Surgentt@gmail.com", password: 'doesntmatch', password_confirmation: "something else")
-      expect(user).to have(1).errors_on(:password_confirmation)
-    end
-
     it "does not accept a password under 6 chacters in lenght" do 
-      user = User.new(email: "Surgentt@gmail.com", password: 'short', password_confirmation: "short")
+      user = User.new(email: "Surgentt@gmail.com", password: 'short')
       expect(user).to have(1).errors_on(:password)
     end
   end    
 
   describe "emails format" do 
     before do 
-      @user = User.new(email: "Surgentt@gmail.com", password: 'password', password_confirmation: "password")
+      @user = User.new(email: "Surgentt@gmail.com", password: 'password')
     end
 
     it "does not accept emails that are not valid format" do 
@@ -64,7 +68,7 @@ describe User do
 
   describe "authentication" do 
     before do 
-      @user = User.create(email: "surgentt@gmail.com", password: 'password', password_confirmation: "password")
+      @user = User.create(email: "surgentt@gmail.com", password: 'password')
     end
 
     let(:found_user) { User.find_by(email: @user.email) }

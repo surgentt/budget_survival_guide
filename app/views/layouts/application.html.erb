@@ -11,8 +11,11 @@
   
 </head>
 <body>
-
+  
   <%= render 'layouts/navbar' %>
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %> col-md-4 col-centered"><%= value %></div>
+  <% end %>
   <div class="containter">
     <%= yield %>
   </div>

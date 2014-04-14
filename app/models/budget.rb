@@ -1,4 +1,5 @@
 class Budget < ActiveRecord::Base
+  belongs_to :user
 
   def translate_state_to_tax
     if self.state != nil

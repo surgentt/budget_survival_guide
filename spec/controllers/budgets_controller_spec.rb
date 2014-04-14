@@ -17,6 +17,12 @@ describe BudgetsController do
   end
 
   describe "POST #create" do
+    it "creates a new guest user with this specific budget" do 
+      count = User.all.count
+      post :create 
+      expect(User.count).to eq(count+1)
+    end
+
     it "redirect to the budget edit path first section" do 
       post :create
       expect(response).to redirect_to budget_edit_path(:budget_id => 1, :section => BudgetsController::Sections.first)
