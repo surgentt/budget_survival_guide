@@ -4,12 +4,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = params[:user] ? User.new(user_params) : User.create_guest
     if @user.save
       sign_in @user
-      redirect_to root_path
+      redirect_to root_path unless @user.guest
     else
-      render 'new'
+     render 'new'
     end
   end
 

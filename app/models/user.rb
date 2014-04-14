@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }, unless: :guest?
 
   def self.create_guest
-    @user = User.create(guest: true)
+    self.create(guest: true)
   end
 
   def User.new_remember_token
@@ -21,6 +21,10 @@ class User < ActiveRecord::Base
 
   def User.hash(token)
     Digest::SHA1.hexdigest(token.to_s)
+  end
+
+  def email
+    guest ? "Guest" : email
   end
 
   private

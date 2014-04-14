@@ -4,6 +4,7 @@ class BudgetsController < ApplicationController
   def create
     @user = User.create_guest
     @budget = @user.budgets.create
+    sign_in @user
 
     redirect_to budget_edit_path(@budget)
   end
