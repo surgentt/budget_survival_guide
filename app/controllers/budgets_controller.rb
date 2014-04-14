@@ -3,7 +3,7 @@ class BudgetsController < ApplicationController
 
   def create
     @user = User.create_guest
-    @budget = Budget.create
+    @budget = @user.budgets.create
 
     redirect_to budget_edit_path(@budget)
   end

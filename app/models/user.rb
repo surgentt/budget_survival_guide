@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
-  has_many :budgets
 
-  before_save { self.email = email.downcase }
+  has_many :budgets, dependent: :destroy
+
+  after_save { self.email.present? && self.email = email.downcase }
   before_create :create_remember_token
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -11,7 +12,7 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }, unless: :guest?
 
   def self.create_guest
-    @user = User.create(email: "guest@gmail.com", password: "guestuser", guest: true)
+    @user = User.create(guest: true)
   end
 
   def User.new_remember_token

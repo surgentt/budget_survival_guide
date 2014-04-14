@@ -17,7 +17,7 @@ describe BudgetsController do
   end
 
   describe "POST #create" do
-    it "creates a new guest user with this specific budget" do 
+    it "creates a new guest user" do 
       count = User.all.count
       post :create 
       expect(User.count).to eq(count+1)
