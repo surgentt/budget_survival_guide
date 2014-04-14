@@ -4,12 +4,25 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = params[:user] ? User.new(user_params) : User.create_guest
+    @user = User.new(user_params)
     if @user.save
       sign_in @user
-      redirect_to root_path unless @user.guest
+      redirect_to root_path
     else
-     render 'new'
+      render 'new'
+    end
+  end
+
+  def edit
+    @user = User.find(current_user.id)
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      redirect_to root_path
+    else
+      render 'edit'
     end
   end
 
