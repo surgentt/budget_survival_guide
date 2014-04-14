@@ -14,7 +14,7 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-04-11T15:54:59-04:00">2014-04-11T15:54:59-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-04-11T17:11:14-04:00">2014-04-11T17:11:14-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -24,16 +24,16 @@
     (<span class="covered_percent"><span class="green">100.0%</span></span>
      covered at
      <span class="covered_strength">
-       <span class="yellow">
-         1.0
+       <span class="green">
+         7.26
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>1</b> files in total.
-    <b>3</b> relevant lines. 
-    <span class="green"><b>3</b> lines covered</span> and
+    <b>2</b> files in total.
+    <b>23</b> relevant lines. 
+    <span class="green"><b>23</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -58,6 +58,16 @@
         <td>3</td>
         <td>0</td>
         <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#35cb4b5936fd768347e5d1710736ed992a712f28" class="src_link" title="app/models/budget.rb">app/models/budget.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>37</td>
+        <td>20</td>
+        <td>20</td>
+        <td>0</td>
+        <td>8.2</td>
       </tr>
       
     </tbody>
@@ -119,17 +129,17 @@
     (<span class="covered_percent"><span class="green">100.0%</span></span>
      covered at
      <span class="covered_strength">
-       <span class="red">
-         0.0
+       <span class="green">
+         8.2
        </span>
     </span> hits/line)
   </h2>
   <a name="Models"></a>
   <div>
-    <b>0</b> files in total.
-    <b>0.0</b> relevant lines. 
-    <span class="green"><b>0.0</b> lines covered</span> and
-    <span class="red"><b>0.0</b> lines missed </span>
+    <b>1</b> files in total.
+    <b>20</b> relevant lines. 
+    <span class="green"><b>20</b> lines covered</span> and
+    <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -144,6 +154,16 @@
       </tr>
     </thead>
     <tbody>
+      
+      <tr>
+        <td class="strong"><a href="#35cb4b5936fd768347e5d1710736ed992a712f28" class="src_link" title="app/models/budget.rb">app/models/budget.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>37</td>
+        <td>20</td>
+        <td>20</td>
+        <td>0</td>
+        <td>8.2</td>
+      </tr>
       
     </tbody>
   </table>
@@ -334,6 +354,246 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="35cb4b5936fd768347e5d1710736ed992a712f28">
+  <div class="header">
+    <h3>app/models/budget.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>20</b> relevant lines. 
+      <span class="green"><b>20</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Budget &lt; ActiveRecord::Base</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def translate_state_to_tax</code>
+        </li>
+      
+        <li class="covered" data-hits="27" data-linenumber="4">
+          <span class="hits">27</span>
+          
+          <code class="ruby">    if self.state != nil</code>
+        </li>
+      
+        <li class="covered" data-hits="25" data-linenumber="5">
+          <span class="hits">25</span>
+          
+          <code class="ruby">      0.30</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def income_after_taxes_calc</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="10">
+          <span class="hits">14</span>
+          
+          <code class="ruby">    if self.income != nil &amp;&amp; self.state != nil</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="11">
+          <span class="hits">14</span>
+          
+          <code class="ruby">      self.income_after_taxes = self.income * (1 - translate_state_to_tax)</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="12">
+          <span class="hits">14</span>
+          
+          <code class="ruby">      self.save</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="13">
+          <span class="hits">14</span>
+          
+          <code class="ruby">      self.income_after_taxes</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def income_in_months</code>
+        </li>
+      
+        <li class="covered" data-hits="13" data-linenumber="18">
+          <span class="hits">13</span>
+          
+          <code class="ruby">    self.income.present? &amp;&amp; self.income / 12</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def income_after_taxes_in_months</code>
+        </li>
+      
+        <li class="covered" data-hits="15" data-linenumber="22">
+          <span class="hits">15</span>
+          
+          <code class="ruby">    self.income.present? &amp;&amp; self.state.present? &amp;&amp; self.income_after_taxes_calc / 12</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def disposable_income_calc</code>
+        </li>
+      
+        <li class="covered" data-hits="13" data-linenumber="26">
+          <span class="hits">13</span>
+          
+          <code class="ruby">    if self.housing.present? &amp;&amp; self.cable_internet.present? &amp;&amp; self.utilities.present? &amp;&amp; self.laundry.present? &amp;&amp; self.laundry.present? &amp;&amp; self.commute.present? &amp;&amp; self.food.present? &amp;&amp; self.debt_service.present? &amp;&amp; self.investing.present? &amp;&amp; self.emergency.present?</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="27">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      self.disposable_income = income_after_taxes_in_months - self.housing - self.cable_internet  - self.utilities - self.laundry - self.commute - self.food - self.debt_service - self.investing - self.emergency</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="28">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      self.save</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="29">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      self.disposable_income</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def emergency_yearly</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="34">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    self.emergency.present? &amp;&amp; self.emergency * 12</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
           
           
           <code class="ruby">end</code>

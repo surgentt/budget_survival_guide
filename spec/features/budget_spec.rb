@@ -30,6 +30,4 @@ feature 'Budget Creation' do
     expect(page).to have_content 'Checkout your budget'
   end
 
-  scenario 
-
 end
