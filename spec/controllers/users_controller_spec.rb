@@ -1,11 +1,11 @@
 require 'spec_helper'
 
-describe UserController do
+describe UsersController do
 
   describe "GET 'new'" do
     it "returns http success" do
-      get 'new'
-      response.should be_success
+      get :new
+      expect(response).to render_template("new")
     end
   end
 

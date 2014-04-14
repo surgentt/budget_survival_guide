@@ -12,6 +12,12 @@
         null,
         null
       ],
+      "/Users/thomassurgent/Desktop/flatiron/Project_Mode/2wk/budget_survival_guide/app/controllers/users_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/thomassurgent/Desktop/flatiron/Project_Mode/2wk/budget_survival_guide/app/models/budget.rb": [
         1,
         null,
@@ -52,6 +58,6 @@
         null
       ]
     },
-    "timestamp": 1397250674
+    "timestamp": 1397485432
   }
 }
