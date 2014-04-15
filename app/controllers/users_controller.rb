@@ -6,6 +6,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      @user.guest = false
+      @user.save
       sign_in @user
       redirect_to root_path
     else
@@ -14,14 +16,14 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(current_user.id)
+    @user = User.find(params[:id])
   end
 
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
-      @user.guest = false
-      @user.save
+    @user.guest = false
+    @user.save
+    if @user.update(user_params)
       redirect_to root_path
     else
       render 'edit'
