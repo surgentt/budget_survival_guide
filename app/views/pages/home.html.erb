@@ -21,7 +21,7 @@
         <% @budgets.each do |budget| %>
           <tr>
             <td class="text-center">
-              <%= budget.created_at %>
+              <%= link_to budget.created_at, budget_edit_path(budget) %>
             </td>
           </tr>
         <% end %>
