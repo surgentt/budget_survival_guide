@@ -4,10 +4,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.new(user_params, guest: false)
     if @user.save
-      @user.guest = false
-      @user.save
       sign_in @user
       redirect_to root_path
     else
