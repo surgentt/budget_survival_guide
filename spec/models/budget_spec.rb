@@ -57,7 +57,7 @@ describe Budget do
     budget3 = Budget.create(income: 60000)
     budget4 = Budget.create(income: nil)
     budget_new = Budget.create(income: 55000)
-    expect(budget_new.median_difference("income")).to eq(15000)
+    expect(budget_new.median_difference("income")).to eq(10000)
   end
 
 

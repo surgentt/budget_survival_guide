@@ -44,7 +44,6 @@ class Budget < ActiveRecord::Base
   end
 
   def median_difference(column)
-    binding.pry
     Budget.median(column) - self.send(column)
   end
 
