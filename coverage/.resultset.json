@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/thomassurgent/Desktop/flatiron/Project_Mode/2wk/budget_survival_guide/app/controllers/pages_controller.rb": [
+      "/Users/brianpisano/Development/code/project_mode/budget_survival_guide/app/controllers/pages_controller.rb": [
         1,
         null,
         1,
@@ -13,7 +13,7 @@
         null,
         null
       ],
-      "/Users/thomassurgent/Desktop/flatiron/Project_Mode/2wk/budget_survival_guide/app/controllers/sessions_controller.rb": [
+      "/Users/brianpisano/Development/code/project_mode/budget_survival_guide/app/controllers/sessions_controller.rb": [
         1,
         null,
         1,
@@ -37,7 +37,7 @@
         null,
         null
       ],
-      "/Users/thomassurgent/Desktop/flatiron/Project_Mode/2wk/budget_survival_guide/app/controllers/users_controller.rb": [
+      "/Users/brianpisano/Development/code/project_mode/budget_survival_guide/app/controllers/users_controller.rb": [
         1,
         1,
         4,
@@ -74,7 +74,7 @@
         null,
         null
       ],
-      "/Users/thomassurgent/Desktop/flatiron/Project_Mode/2wk/budget_survival_guide/app/models/budget.rb": [
+      "/Users/brianpisano/Development/code/project_mode/budget_survival_guide/app/models/budget.rb": [
         1,
         1,
         null,
@@ -114,7 +114,7 @@
         null,
         null
       ],
-      "/Users/thomassurgent/Desktop/flatiron/Project_Mode/2wk/budget_survival_guide/app/models/user.rb": [
+      "/Users/brianpisano/Development/code/project_mode/budget_survival_guide/app/models/user.rb": [
         1,
         null,
         1,
@@ -147,6 +147,6 @@
         null
       ]
     },
-    "timestamp": 1397587731
+    "timestamp": 1397589353
   }
 }
