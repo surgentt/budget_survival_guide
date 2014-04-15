@@ -19,6 +19,8 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    @user.guest = false
+    @user.save
     if @user.update_attributes(user_params)
       redirect_to root_path
     else

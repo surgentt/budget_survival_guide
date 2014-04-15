@@ -12,3 +12,20 @@
     <%= image_tag("swiss_army.png") %>
   </div>
 </div>
+
+<% if signed_in? %>
+  <div class="row">
+    <div class="col-md-3 col-xs-4 col-centered">
+      <table class="col-centered table table-striped">
+        <tr><th class="text-center"> Your Budgets</th></tr>
+        <% @budgets.each do |budget| %>
+          <tr>
+            <td class="text-center">
+              <%= budget.created_at %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+<% end %>
