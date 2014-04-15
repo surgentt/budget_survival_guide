@@ -15,7 +15,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "About", about_path %></li>
         <% if signed_in? && !guest? %>
-          <li><%= link_to "#{current_user.email}" %></li>
+          <li><%= link_to "#{current_user.email}", root_path %></li>
           <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
         <% elsif signed_in? && guest? %>
           <li><%= link_to "Sign up", edit_user_path(current_user) %></li>
