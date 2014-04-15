@@ -7,12 +7,4 @@ describe "session" do
     expect(page).to have_content('Sign in')
   end
 
-  describe "signup" do 
-    it "should create a new user" do
-      visit signup_path
-      fill_in "Email", with: "Surgentt@gmail.com"
-      fill_in "Password", with: "password"
-    end
-  end
-
 end
