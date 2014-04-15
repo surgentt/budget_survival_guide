@@ -35,4 +35,18 @@ class Budget < ActiveRecord::Base
     self.emergency.present? && self.emergency * 12
   end
 
+  def compare_to_mean
+    self.income
+  end
+
+  def self.db_array(column)
+    self.pluck(column).compact
+  end
+
+  def median(array)
+    sorted = array.sort
+    len = sorted.length
+    return (sorted[(len - 1) / 2] + sorted[len / 2]) / 2.0
+  end
+
 end

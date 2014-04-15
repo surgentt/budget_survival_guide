@@ -112,6 +112,22 @@
         2,
         null,
         null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/brianpisano/Development/code/project_mode/budget_survival_guide/app/models/user.rb": [
@@ -147,6 +163,6 @@
         null
       ]
     },
-    "timestamp": 1397589353
+    "timestamp": 1397592835
   }
 }

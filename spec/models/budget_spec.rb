@@ -35,5 +35,35 @@ describe Budget do
     budget = Budget.create(emergency: 100)
     expect(budget.emergency_yearly).to eq(1200)
   end
+
+  it "compares budgets of all users" do
+    budget1 = Budget.create(income: 80000)
+    budget2 = Budget.create(income: 70000)
+    expect(Budget.average("income")).to eq(75000)
+  end
+
+  it "compares current budget against average of all users" do
+    budget1 = Budget.create(income: 80000)
+    budget2 = Budget.create(income: 70000)
+    expect(budget2.compare_to_mean).to eq(5000)
+  end
+
+  it "compares budgets against the median user budget" do
+    budget1 = Budget.create(income: 80000)
+    budget2 = Budget.create(income: 70000)
+    budget3 = Budget.create(income: 60000)
+
+    expect(Budget.median(budget)).to eq (70000)
+  end
+
+  it "returns an array for one database column" do
+    budget1 = Budget.create(income: 80000)
+    budget2 = Budget.create(income: 70000)
+    budget3 = Budget.create(income: 60000)
+    budget4 = Budget.create(income: nil)
+    Budget.pluck(:income).compact 
+
+    expect(Budget.db_array("income")).to eq ([80000, 70000, 60000])
+  end
   
 end

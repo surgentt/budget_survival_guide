@@ -7,6 +7,9 @@
   <tr class='clickableRow' href='income'>
     <td><strong>Income:</strong></td>
     <td><%= number_with_delimiter(@budget.income_in_months, :delimiter => ',') %></td>
+    <% if @budget.income.present? %>
+    <td><%= (Budget.average("income").to_i - @budget.income) / 12 %> </td>
+    <% end %>
   </tr>
 
   <tr class='clickableRow' href='state'>
