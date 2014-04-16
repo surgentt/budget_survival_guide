@@ -1,4 +1,5 @@
 class BudgetsController < ApplicationController
+  before_action :correct_user,   only: :destroy
   Sections = ["income", "state", "housing", "cable_internet", "utilities", "laundry", "commute", "food", "debt_service", "investing", "emergency", "result"]
 
   def create
@@ -52,4 +53,9 @@ class BudgetsController < ApplicationController
       )
     end
     helper_method :next_budget_section
+
+    def correct_user
+      @budget = current_user.budgets.find_by(id: params[:id])
+      redirect_to root_url if @budget.nil?
+    end
 end

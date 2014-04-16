@@ -48,7 +48,9 @@ describe BudgetsController do
 
   describe 'DELETEdestroy' do 
     before :each do
-      @budget = create(:budget) 
+      @user = create(:user)
+      @budget = @user.budgets.create
+      controller.stub(:current_user).and_return(@user) 
     end
 
     it "deletes the budget" do 
