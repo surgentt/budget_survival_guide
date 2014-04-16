@@ -35,7 +35,6 @@ class Budget < ActiveRecord::Base
     self.emergency.present? && self.emergency * 12
   end
 
-
   def self.median(column)
     array = self.pluck(column).compact
     sorted = array.sort
@@ -44,8 +43,15 @@ class Budget < ActiveRecord::Base
   end
 
   def median_difference(column)
-    Budget.median(column) - self.send(column)
+    if self.send(column).present?
+      (self.send(column).to_i - Budget.median(column)).to_i
+    end
   end
 
+  def median_difference_monthly_adj(column)
+    if self.send(column).present?
+      median_difference(column) / 12
+    end
+  end
 
 end

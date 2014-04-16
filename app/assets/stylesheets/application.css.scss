@@ -65,6 +65,15 @@ body {
     text-align: right;
     cursor: pointer;
   }
+  td:nth-child(3){
+    text-align: right;
+    width: 90px;
+    visibility: hidden;
+  }
+}
+
+.compare_header{
+  visibility: hidden;
 }
 
 .clickableRow {
@@ -75,10 +84,6 @@ body {
   background-image: url('beer.png');
   background-repeat:repeat;
   height: 32px;
-}
-
-.budgets{
-  
 }
 
 /* forms */

@@ -2,77 +2,87 @@
 
   <tr>
     <th COLSPAN="2" class="text-center"><u>Monthly Budget</u></th>
+    <th class="text-center compare_header"><u>Compare to Median</u></th>
   </tr>
 
   <tr class='clickableRow' href='income'>
     <td><strong>Income:</strong></td>
     <td><%= number_with_delimiter(@budget.income_in_months, :delimiter => ',') %></td>
-    <% if @budget.income.present? %>
-    <td><%= (Budget.average("income").to_i - @budget.income) / 12 %> </td>
-    <% end %>
+    <td><%= number_with_delimiter(@budget.median_difference_monthly_adj("income"), delimiter: ',') %></td>
   </tr>
 
   <tr class='clickableRow' href='state'>
     <td><strong>Tax Rate:</strong></td>
     <td><%= @budget.translate_state_to_tax %></td>
+    <td></td>
   </tr>
 
   <tr>
     <td><strong>Income after taxes:</strong></td>
-    <td>
-    <%= number_with_delimiter(@budget.income_after_taxes_in_months, :delimiter => ',') %>
-    </td>
+    <td><%= number_with_delimiter(@budget.income_after_taxes_in_months, :delimiter => ',') %></td>
+    <td><%= number_with_delimiter(@budget.median_difference_monthly_adj("income_after_taxes"), :delimiter => ',') %></td>
   </tr>
 
   <tr class='clickableRow' href='housing'>
     <td><strong>Housing:</strong></td>
     <td><%= number_with_delimiter(@budget.housing, :delimiter => ',') %></td>
+    <td><%= number_with_delimiter(@budget.median_difference("housing"), delimiter: ',') %></td>
   </tr>
 
   <tr class='clickableRow' href='cable_internet'>
     <td><strong>Cable &amp; Internet:</strong></td>
     <td><%= number_with_delimiter(@budget.cable_internet, :delimiter => ',') %></td>
+    <td><%= number_with_delimiter(@budget.median_difference("cable_internet"), delimiter: ',') %></td>
   </tr>
 
   <tr class='clickableRow' href='utilities'>
     <td><strong>Utilities:</strong></td>
     <td><%= number_with_delimiter(@budget.utilities, :delimiter => ',') %></td>
+    <td><%= number_with_delimiter(@budget.median_difference("utilities"), delimiter: ',') %></td>
   </tr>
 
   <tr class='clickableRow' href='laundry'>
     <td><strong>Laundry:</strong></td>
     <td><%= number_with_delimiter(@budget.laundry, :delimiter => ',') %></td>
-
+    <td><%= number_with_delimiter(@budget.median_difference("laundry"), delimiter: ',') %></td>
   </tr>
 
   <tr class='clickableRow' href='commute'>
     <td><strong>Commute:</strong></td>
     <td><%= number_with_delimiter(@budget.commute, :delimiter => ',') %></td>
+    <td><%= number_with_delimiter(@budget.median_difference("commute"), delimiter: ',') %></td>
   </tr>
 
   <tr class='clickableRow' href='food'>
     <td><strong>Food:</strong></td>
     <td><%= number_with_delimiter(@budget.food, :delimiter => ',') %></td>
+    <td><%= number_with_delimiter(@budget.median_difference("food"), delimiter: ',') %></td>
   </tr>
 
   <tr class='clickableRow' href='debt_service'>
     <td><strong>Debt Payments:</strong></td>
     <td><%= number_with_delimiter(@budget.debt_service, :delimiter => ',') %></td>
+    <td><%= number_with_delimiter(@budget.median_difference("debt_service"), delimiter: ',') %></td>
   </tr>
 
   <tr class='clickableRow' href='investing'>
     <td><strong>Investing:</strong></td>
     <td><%= number_with_delimiter(@budget.investing, :delimiter => ',') %></td>
+    <td><%= number_with_delimiter(@budget.median_difference("investing"), delimiter: ',') %></td>
   </tr>
 
   <tr class='clickableRow' href='emergency'>
     <td><strong>Emergency:</strong></td>
     <td><%= number_with_delimiter(@budget.emergency, :delimiter => ',') %></td>
+    <td><%= number_with_delimiter(@budget.median_difference("emergency"), delimiter: ',') %></td>
   </tr>
 
   <tr class='clickableRow' href='result'>
     <td><strong>Disposable income:</strong></td>
     <td id="result"><%= number_with_delimiter(@budget.disposable_income_calc, :delimiter => ',') %></td>
+    <td><%= number_with_delimiter(@budget.median_difference("disposable_income"), delimiter: ',') %></td>
   </tr>
 
 </table>
+
+<button class="howAmIDoing btn btn-large btn-primary">How am I doing?</button>

@@ -1,6 +1,11 @@
 jQuery(document).ready(function($) {
   $(".clickableRow").click(function() {
-        window.document.location = $(this).attr("href");
+    window.document.location = $(this).attr("href");
+  });
+
+  $('.howAmIDoing').on('click', function() {
+    $('.table td:nth-child(3)').css("visibility","visible");
+    $('.compare_header').css("visibility","visible");
   });
 
   if($('span#numOfBeers')[0]) {

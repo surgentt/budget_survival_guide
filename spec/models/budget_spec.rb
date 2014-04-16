@@ -36,28 +36,27 @@ describe Budget do
     expect(budget.emergency_yearly).to eq(1200)
   end
 
-  it "compares budgets of all users" do
-    budget1 = Budget.create(income: 80000)
-    budget2 = Budget.create(income: 70000)
-    expect(Budget.average("income")).to eq(75000)
-  end
+  describe "comparitive analysis across budgets" do 
+    before :each do 
+      budget1 = Budget.create(income: 80000)
+      budget2 = Budget.create(income: 70000)
+      budget3 = Budget.create(income: 60000)
+      budget4 = Budget.create(income: nil)
+    end
 
+    it "collects budgets and returns median" do
+      expect(Budget.median("income")).to eq(70000)
+    end
+    
+    it "calculates the difference between current budget and median budget" do
+      budget_new = Budget.create(income: 55000)
+      expect(budget_new.median_difference("income")).to eq(-10000)
+    end
 
-  it "collects budgets and returns median" do
-    budget1 = Budget.create(income: 80000)
-    budget2 = Budget.create(income: 70000)
-    budget3 = Budget.create(income: 60000)
-    budget4 = Budget.create(income: nil)
-    expect(Budget.median("income")).to eq(70000)
-  end
-  
-  it "calculates the difference between current budget and median budget" do
-    budget1 = Budget.create(income: 80000)
-    budget2 = Budget.create(income: 70000)
-    budget3 = Budget.create(income: 60000)
-    budget4 = Budget.create(income: nil)
-    budget_new = Budget.create(income: 55000)
-    expect(budget_new.median_difference("income")).to eq(10000)
+    it "translates the median into a monthly basis" do 
+      budget_new = Budget.create(income: 55000)
+      expect(budget_new.median_difference_monthly_adj("income")).to eq(-834)
+    end
   end
 
 
