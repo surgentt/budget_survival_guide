@@ -30,4 +30,13 @@ feature 'Budget Creation' do
     expect(page).to have_content 'Checkout your budget'
   end
 
+  ## Maybe need to add a class to test. have_no_css
+  # scenario "clicking the How am I doing button css persists through requests" do 
+  #   visit root_path
+  #   click_button "Create Budget"
+  #   expect(page.has_css?('th.make_visible')).to eq(false)
+  #   click_button "How am I doing?"
+  #   expect(page.has_css?('.make_visible')).to eq(true)
+  # end
+
 end

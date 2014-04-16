@@ -76,6 +76,10 @@ body {
   visibility: hidden;
 }
 
+.make_visible {
+  visibility: visible !important;
+}
+
 .clickableRow {
   cursor: pointer;
 }

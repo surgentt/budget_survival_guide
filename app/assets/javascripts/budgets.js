@@ -4,9 +4,19 @@ jQuery(document).ready(function($) {
   });
 
   $('.howAmIDoing').on('click', function() {
-    $('.table td:nth-child(3)').css("visibility","visible");
-    $('.compare_header').css("visibility","visible");
+    $('.table td:nth-child(3)').toggleClass("make_visible");
+    $('.compare_header').toggleClass("make_visible");
+    if ($.cookie('compare-medium') == 'true'){
+      $.removeCookie('compare-medium');
+    } else {
+      $.cookie('compare-medium', 'true')
+    }
   });
+
+  if($.cookie('compare-medium') == 'true'){
+    $('.table td:nth-child(3)').addClass("make_visible");
+    $('.compare_header').addClass("make_visible");
+  };
 
   if($('span#numOfBeers')[0]) {
     var result = $('#result').text();

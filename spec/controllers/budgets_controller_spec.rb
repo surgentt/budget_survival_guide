@@ -2,6 +2,19 @@ require 'spec_helper'
 
 describe BudgetsController do
 
+  describe "POST #create" do
+    it "creates a new guest user" do 
+      count = User.all.count
+      post :create 
+      expect(User.count).to eq(count+1)
+    end
+
+    it "redirect to the budget edit path first section" do 
+      post :create
+      expect(response).to redirect_to budget_edit_path(:budget_id => 1, :section => BudgetsController::Sections.first)
+    end
+  end
+
   describe "GET #edit" do
     it "renders the :edit template with the income section by default" do 
       budget = create(:budget)
@@ -13,19 +26,6 @@ describe BudgetsController do
       budget = create(:budget)
       get :edit, :budget_id => budget.id, :section => "state", use_route: :budget_edit
       expect(response).to render_template("edit")
-    end
-  end
-
-  describe "POST #create" do
-    it "creates a new guest user" do 
-      count = User.all.count
-      post :create 
-      expect(User.count).to eq(count+1)
-    end
-
-    it "redirect to the budget edit path first section" do 
-      post :create
-      expect(response).to redirect_to budget_edit_path(:budget_id => 1, :section => BudgetsController::Sections.first)
     end
   end
   
