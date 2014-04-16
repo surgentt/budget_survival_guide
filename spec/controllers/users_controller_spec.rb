@@ -24,6 +24,7 @@ describe UsersController do
 
     it "renders the :edit template" do 
       user = create(:user)
+      controller.stub(:current_user).and_return(user)
       get :edit, id: user
       expect(response).to render_template :edit
     end 
@@ -73,6 +74,7 @@ describe UsersController do
       end
 
       it "changes @user's attributes and specifies that the user is not a guest" do 
+        controller.stub(:current_user).and_return(@user)
         patch :update, id: @user, user: attributes_for(:user)
         @user.reload
         expect(@user.email).to eq("surgentt@gmail.com")
@@ -88,6 +90,7 @@ describe UsersController do
       end
 
       it "re-renders the edit template" do 
+        controller.stub(:current_user).and_return(@user)
         patch :update, id: @user, user: {:email=>"bademail", :password=>"short"}
         expect(response).to render_template :edit
       end
