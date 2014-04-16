@@ -46,4 +46,21 @@ describe BudgetsController do
     end
   end
 
+  describe 'DELETEdestroy' do 
+    before :each do
+      @budget = create(:budget) 
+    end
+
+    it "deletes the budget" do 
+      expect{
+        delete :destroy, id: @budget
+      }.to change(Budget,:count).by(-1)
+    end
+
+    it "redirects to root_url" do
+      delete :destroy, id: @budget 
+      expect(response).to redirect_to root_url
+    end 
+  end
+
 end

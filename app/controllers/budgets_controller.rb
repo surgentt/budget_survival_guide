@@ -25,6 +25,11 @@ class BudgetsController < ApplicationController
     end
   end
 
+  def destroy
+    Budget.find(params[:id]).destroy
+    redirect_to root_path 
+  end
+
   private
     def budget_params
       params.require(:budget).permit(:income, :healthcare, :state, :income_after_taxes, :housing, :cable_internet, :utilities, :laundry, :commute, :food, :debt_service, :investing, :emergency, :disposable_income)
