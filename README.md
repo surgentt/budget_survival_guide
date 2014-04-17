@@ -19,7 +19,7 @@ We love pull requests! All we ask is that you submit RSpec tests along with any 
 
 ## Author
 
-Made with love at the [Flatiron School](www.flatironschool.com) by [Thomas Surgent](www.twitter.com/surgentt) and [Brian Pisano](https://twitter.com/brianpisano87) 
+Made with love at the [Flatiron School](http://flatironschool.com/) by [Thomas Surgent](www.twitter.com/surgentt) and [Brian Pisano](https://twitter.com/brianpisano87) 
 
 ## License
 
